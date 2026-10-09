@@ -12,7 +12,7 @@
 </ul>
 
 <h3>Reviews</h3>
-<form method="POST" action="/place/{{ place.id }}/review">
+<form method="POST" action="/review/{{ place.id }}">
     <input type="text" name="user_name" placeholder="Your name" required>
     <input type="number" name="rating" min="1" max="5" value="5" required>
     <textarea name="comment" placeholder="Write a review..." required></textarea>
