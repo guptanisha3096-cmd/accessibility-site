@@ -1,7 +1,7 @@
 import sqlite3
 
 def get_db():
-    conn = sqlite3.connect('accessibility.db')
+    conn = sqlite3.connect(':memory:')
     conn.row_factory = sqlite3.Row
     return conn
 
