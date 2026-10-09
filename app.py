@@ -103,8 +103,8 @@ def add_place():
         conn.close()
         return redirect(url_for('index'))
     return render_template('add_place.html')
-
 if __name__ == '__main__':
     from database import init_db
     init_db()
-    app.run(host='0.0.0.0', port=5000)
+    import os
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
