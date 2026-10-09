@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add a Place</h2>
+<form method="post">
+    <input type="text" name="name" class="form-control mb-2" placeholder="Place name" required>
+    <input type="text" name="category" class="form-control mb-2" placeholder="Category (hospital, park, station...)" required>
+    <input type="text" name="area" class="form-control mb-2" placeholder="Area" required>
+    <textarea name="description" class="form-control mb-2" placeholder="Description"></textarea>
+    <h5>Facilities</h5>
+    <label>Wheelchair Ramp</label>
+    <select name="ramp" class="form-control mb-2"><option value="yes">Yes</option><option value="no">No</option></select>
+    <label>Elevator</label>
+    <select name="elevator" class="form-control mb-2"><option value="yes">Yes</option><option value="no">No</option></select>
+    <label>Accessible Toilet</label>
+    <select name="accessible_toilet" class="form-control mb-2"><option value="yes">Yes</option><option value="no">No</option></select>
+    <label>Accessible Parking</label>
+    <select name="accessible_parking" class="form-control mb-2"><option value="yes">Yes</option><option value="no">No</option></select>
+    <label>Accessible Seating</label>
+    <select name="accessible_seating" class="form-control mb-2"><option value="yes">Yes</option><option value="no">No</option></select>
+    <button class="btn btn-primary">Save Place</button>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Find Accessible Places</h2>
+<form method="get" action="/search" class="row g-3 mb-4">
+    <div class="col-md-4">
+        <input type="text" name="q" class="form-control" placeholder="Search by name..." value="{{ query or '' }}">
+    </div>
+    <div class="col-md-4">
+        <select name="facility" class="form-control">
+            <option value="">All facilities</option>
+            <option value="ramp">Wheelchair Ramp</option>
+            <option value="elevator">Elevator</option>
+            <option value="accessible_toilet">Accessible Toilet</option>
+            <option value="accessible_parking">Accessible Parking</option>
+            <option value="accessible_seating">Accessible Seating</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<div class="row">
+    {% for place in places %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ place['name'] }}</h5>
+                <p class="card-text">{{ place['category'] }} — {{ place['area'] }}</p>
+                <p class="card-text">{{ place['description'] }}</p>
+                <a href="/place/{{ place['id'] }}" class="btn btn-sm btn-outline-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>No places found.</p>
+    {% endfor %}
+</div>
+{% endblock %}
