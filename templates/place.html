@@ -19,9 +19,6 @@
     <button type="submit">Submit Review</button>
 </form>
 <ul>
-{% for r in reviews %}
-    <li><strong>{{ r.user_name }}</strong> ({{ r.rating }}/5): {{ r.comment }}</li>
-{% endfor %}
 </ul>
 
 <h3>Report a Problem</h3>
